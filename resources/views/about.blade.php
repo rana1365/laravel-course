@@ -1,0 +1,2 @@
+<h1> Welcome to Laravel 12..! </h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere enim corporis at sint aspernatur, deleniti explicabo quod quae! Nisi labore dolore quae illum, laboriosam dignissimos placeat? Nulla pariatur aliquam nihil.</p>
