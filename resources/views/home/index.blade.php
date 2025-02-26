@@ -3,7 +3,20 @@
 @section('title', 'Home Page')
 
 @section('content')
+      <!-- Usage of laravel anonymous components -->
+       {{-- <x-card /> --}}
+       {{-- <x-admin.card /> --}}
 
+       <!-- Usage of laravel class components(named) -->
+       {{-- <x-card >
+          <x-slot:title> Card Title 1 </x-slot:title>
+          Card Conten One
+          <x-slot:footer > Card Footer 1 </x-slot:footer>
+        </x-card > --}}
+        {{--
+        <x-card>Card Conten Two</x-card>
+        <x-card>Card Conten Three</x-card> 
+        --}}
         <!-- Home Slider -->
         <section class="hero-slider">
             <!-- Carousel wrapper -->
@@ -1009,5 +1022,13 @@
             </section>
             <!--/ New Cars -->
           </main>
+
+          @section('footerLinks')
+
+          @parent
+            <a href="#"> Link 3 </a>
+            <a href="#"> Link 4 </a>
+
+          @endsection
 
 @endsection
