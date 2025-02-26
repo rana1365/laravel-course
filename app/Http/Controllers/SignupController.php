@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class SignupController extends Controller
 {
-    public function index()
+    public function create()
     {
-        return view('home.index');
+        return view('auth.signup');
     }
 }
