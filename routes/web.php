@@ -7,10 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/signup', [SignupController::class, 'create'])->name('signup');
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');
