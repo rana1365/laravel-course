@@ -10,7 +10,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $cars = Car::get();
+        // Select All Cars
+        //$cars = Car::get();
+
+        // Select published Cars
+
+        $cars = Car::where('published_at', '!=', null)->get();
         
         dump($cars);
 
