@@ -21,10 +21,10 @@ class Car extends Model
         'car_type_id',
         'fuel_type_id',
         'user_id',
-        'city_it',
+        'city_id',
         'address',
         'phone',
         'description',
-        'published_at'
+        'published_at',
     ];
 }
