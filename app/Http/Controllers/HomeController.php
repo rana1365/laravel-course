@@ -70,6 +70,17 @@ class HomeController extends Controller
         $car3 = new Car($carData);
         $car3->save(); -- */
 
+        /*  Update Specific data approach-1
+        $car = Car::find(3);
+        $car->price = 4000;
+        $car->save(); -- */
+
+        /* Update data approach-2
+        Car::updateOrCreate(
+            ['price' => 4200], 
+            ['price' => 5000],
+        ); -- */
+
         return view('home.index');
     }
 }
