@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CarFeatures extends Model
 {
@@ -29,4 +30,10 @@ class CarFeatures extends Model
         'rear_parking_sensors',
         'leather_seats'
     ];
+
+    public function car(): BelongsTo
+    {
+        // Car has multiple features
+        return $this->belongsTo(Car::class);
+    }
 }

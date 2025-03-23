@@ -34,11 +34,13 @@ class Car extends Model
 
     public function features(): HasOne
     {
+        // Car has one CarFeatures
         return $this->hasOne(CarFeatures::class);
     }
 
     public function primaryImage(): HasOne
     {
+        // Car has one primary image
         return $this->hasOne(CarImage::class)
         ->oldestOfMany('position');
     }
@@ -55,8 +57,39 @@ class Car extends Model
         return $this->belongsTo(CarType::class);
     }
 
+    public function fuelType(): BelongsTo
+    {
+        // FuelType has multiple cars
+        return $this->belongsTo(FuelType::class);
+    }
+
+    public function maker(): BelongsTo
+    {
+        // Maker has multiple cars
+        return $this->belongsTo(Maker::class);
+    }
+
+    public function model(): BelongsTo
+    {
+        // Model has multiple cars
+        return $this->belongsTo(\App\Models\Model::class);
+    }
+
+    public function owner(): BelongsTo
+    {
+        // Owner(user) has multiple cars
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function city(): BelongsTo
+    {
+        // City has multiple cars
+        return $this->belongsTo(City::class);
+    }
+
     public function favoredUsers(): BelongsToMany
     {
+        // A Car is favored by multiple users
         return $this->belongsToMany(User::class, 'favorite_cars');
     }
 }
