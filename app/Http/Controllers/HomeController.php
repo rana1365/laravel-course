@@ -14,9 +14,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        Model::factory()
-            ->count(5)
-            ->for(Maker::factory()->state(['name' => 'Tesla']))
+        User::factory()
+            ->has(Car::factory()->count(5), 'favouriteCars')
             ->create();
         
 
